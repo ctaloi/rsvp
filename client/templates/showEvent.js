@@ -5,9 +5,10 @@ Template.showEvent.helpers({
 });
 Template.showEventLoggedIn.helpers({
 	isValidEvent: function () {
-		var thisSlug = Router.current().params.eventSlug
+		var thisSlug = Router.current().params.slug
 		console.log(thisSlug)
-		isValid = Events.findOne({eventSlug: thisSlug});
+		isValid = Events.findOne({slug: thisSlug});
+		console.log(isValid)
 		return isValid
 	}
 });

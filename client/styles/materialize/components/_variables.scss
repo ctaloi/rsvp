@@ -1,13 +1,14 @@
 /*** ALOI ***/
-$background-color: #616161 !default;
+$background-color: #e9e8ef !default;
 $emergency-color: #F46036 !default;
+$round-border-radius: 5px !default;
 
 /*** Colors ***/
-$primary-color: #616161 !default;
+$primary-color: #e9e8ef !default;
 $primary-color-light: lighten($primary-color, 15%) !default;
 $primary-color-dark: darken($primary-color, 15%) !default;
 
-$secondary-color: #F46036 !default;
+$secondary-color: #66447d !default;
 
 $success-color: color("blue", "base") !default;
 $error-color: color("red", "base") !default;
@@ -135,6 +136,7 @@ $toast-text-color: #fff !default;
 
 /*** Typography ***/
 $off-black: rgba(0, 0, 0, 0.87) !default;
+
 // Header Styles
 $h1-fontsize: 4.2rem !default;
 $h2-fontsize: 3.56rem !default;

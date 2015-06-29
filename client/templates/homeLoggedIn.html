@@ -1,0 +1,23 @@
+<template name="homeLoggedIn">
+	  <div class="card-panel">
+        <h1>Quick RSVP<i class="material-icons right medium">grade</i></h1>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus illo quaerat officia accusamus doloremque, non impedit repellendus. Quos unde, quibusdam assumenda laudantium suscipit sapiente commodi mollitia, in velit tempore dolorem.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique id, soluta laborum laudantium nisi accusantium, velit debitis asperiores impedit distinctio consequuntur adipisci nobis minima sit maxime. Quam fuga quisquam, in!</p>
+
+        <a class="waves-effect waves-light btn-large {{#if showNewEvent}} disabled {{/if}}" data-action="show-new-event"><i class="material-icons right">person_add</i>New RSVP</a>
+
+        <a class="waves-effect waves-light btn-large {{#if showEvents}} disabled {{/if}}" data-action="show-events"><i class="material-icons right">person_add</i>RSVPs {{eventCount}}</a>
+
+    </div>
+
+    {{#if showNewEvent}}
+        {{>newEvent}}
+    {{/if}}
+
+    {{#if showEvents}}
+        {{>eventList}}
+    {{/if}}
+
+</template>

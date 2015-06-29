@@ -9,20 +9,23 @@
 </template>
 
 <template name="showEventLoggedIn">
-
+EVENT LOGGED IN
 {{#if isValidEvent}}
+VALID EVENT
+{{logger}}
 	<div class="card-panel grey lighten-5">
-	<h1>{{this.event.name}} <i class="material-icons right medium">movie</i> </h1>
+	<h3>{{this.event.title}} <i class="material-icons right medium">movie</i> </h3>
 	<h5>{{this.event.date}}</h5>
 
 	<p class="flow-text">Hey {{firstName}} !</p>
-	<p class="flow-text">{{this.event.details}}</p>
+	<p class="flow-text">{{this.event.description}}</p>
 	<p class="flow-text">Are you coming?</p>
 
 	<a class="waves-effect waves-light btn-large blue"><i class="material-icons right">mood</i>Yes we are</a>
 	<a class="waves-effect waves-light btn-large"><i class="material-icons right">mood_bad</i>I wish we could</a>
 	</div>
 {{else}}
+NO VALID EVENT
 	{{>home}}
 {{/if}}
 

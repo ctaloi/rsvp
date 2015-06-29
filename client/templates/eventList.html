@@ -1,0 +1,12 @@
+<template name="eventList">
+
+<div class="card-panel grey lighten-5">
+
+<div class="collection">
+{{#each myEvents}}
+	<a href="/{{this.slug}}" class="collection-item">{{this.title}}</a>
+{{/each}}
+</div>
+
+</div>
+</template>

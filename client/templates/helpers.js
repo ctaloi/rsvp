@@ -1,3 +1,7 @@
+
+showNewEvent = new ReactiveVar()
+showEvents = new ReactiveVar()
+
 Template.registerHelper('firstName', function() {
   return firstName = Meteor.user().profile.name.split(" ")[0]
 })

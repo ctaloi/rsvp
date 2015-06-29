@@ -16,3 +16,4 @@ accounts-ui-unstyled
 accounts-ui
 iron:router
 meteorhacks:fast-render
+matb33:collection-hooks

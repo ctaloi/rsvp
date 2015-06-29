@@ -9,8 +9,8 @@
   padding-right: $card-padding-right;
 
   margin: $element-top-margin 0 $element-bottom-margin 0;
-  border-radius: 2px;
-  @extend .z-depth-1;
+  border-radius: $round-border-radius;
+  @extend .z-depth-2;
   background-color: $card-bg-color;
 }
 
