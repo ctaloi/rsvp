@@ -1,6 +1,6 @@
 <template name="newEvent">
   <div class="card-panel">
-  <h1>New Event<i class="material-icons right medium">person_add</i></h1>
+  <h3>New RSVP<i class="material-icons right medium">person_add</i></h3>
 
   <div class="form-block">
   <div class="row">
@@ -9,26 +9,25 @@
 
         <div class="input-field col s12">
           <input type="text" id="title" name="title" class="" value="{{title}}" data-action="event-title">
-          <label for="title" class="">Event Name</label>
+          <label for="title" class="">Name</label>
         </div>
 
-        <div class="input-field col s12">
-          <input type="text" id="location" name="location" class="" value="{{location}}">
-          <label for="location" class="">Event Location</label>
-        </div>
-
-        <div class="input-field col s12">
+        <div class="input-field col s6">
           <input type="text" id="date" name="date" class="" value="{{date}}">
-          <label for="date" class="">Event Date</label>
+          <label for="date" class="">Date</label>
+        </div>
+        <div class="input-field col s6">
+          <input type="text" id="location" name="location" class="" value="{{location}}">
+          <label for="location" class="">Location</label>
         </div>
 
         <div class="input-field col s12">
           <textarea id="description" class="materialize-textarea" value="{{description}}"></textarea>
-          <label for="description" class="">Event Description</label>
+          <label for="description" class="">Description</label>
         </div>
 
         <div class="input-field col s12 right">
-          <button class="btn btn-large waves-effect waves-light" data-action="save">Save Event<i class="material-icons right">create</i>
+          <button class="btn btn-large waves-effect waves-light" data-action="save">Save<i class="material-icons right">create</i>
         </button>
 
         <div class="input-field col s12">

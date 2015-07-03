@@ -7,6 +7,12 @@ Template.homeLoggedIn.helpers({
 	},
 	eventCount: function () {
 		return Events.find({}).count()
+	},
+	eventVisible: function () {
+		if (showNewEvent.get() || showEvents.get()) {
+			return true
+		} else {
+			return false };
 	}
 })
 
@@ -16,6 +22,5 @@ Template.homeLoggedIn.events({
 },
 	'click [data-action="show-events"]': function(event, template) {
 		showEvents.set( !showEvents.get() );
-		console.log(showEvents.get())
 	}
 })

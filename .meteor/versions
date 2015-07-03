@@ -20,7 +20,9 @@ deps@1.0.7
 ejson@1.0.6
 facebook@1.2.0
 fastclick@1.0.3
+fortawesome:fontawesome@4.2.0_2
 fourseven:scss@2.1.1
+froala:editor@1.2.7
 geojson-utils@1.0.3
 gwendall:session-json@0.1.7
 html-tools@1.0.4

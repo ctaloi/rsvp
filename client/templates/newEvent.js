@@ -1,12 +1,12 @@
 
-var eventSlug = new ReactiveVar()
+var title = new ReactiveVar()
 
 var clearForm = function() {
     $("#title").val(null);
     $("#location").val(null);
     $("#date").val(null);
     $("#description").val(null);
-    eventSlug.set(null);
+    title.set(null);
 }
 
 Template.newEvent.events({
@@ -40,13 +40,17 @@ Template.newEvent.events({
 		});
 	},
 	'keyup [data-action="event-title"]': function(event) {
-		var title = event.target.value
-		eventSlug.set(encodeURI(title.split(' ').join('-')));
-	}
+		var theTitle = event.target.value
+		title.set(theTitle);
+	},
 })
 
 Template.newEvent.helpers({
 	eventSlug: function () {
-		return eventSlug.get()
+		slug = title.get()
+		return encodeURI(slug.split(' ').join('-'))
+	},
+	eventTitle: function () {
+		return title.get()
 	}
 });
