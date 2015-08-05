@@ -1,12 +1,27 @@
 
-var title = new ReactiveVar()
+var eventSlug = new ReactiveVar()
+
+function hasWhiteSpace(s) {
+  return s.indexOf(' ') >= 0;
+}
+
+function makeSlug(title) {
+  // Transform title to slug
+  if (hasWhiteSpace(title)) {
+    slug = encodeURI(title.split(' ').join('-'))
+  } else {
+    slug = encodeURI(title)
+  }
+  console.log("> transformed "+ title + " to " + slug)
+  return slug
+}
 
 var clearForm = function() {
     $("#title").val(null);
     $("#location").val(null);
     $("#date").val(null);
     $("#description").val(null);
-    title.set(null);
+    eventSlug.set(null);
 }
 
 Template.newEvent.events({
@@ -19,11 +34,9 @@ Template.newEvent.events({
 		var date = $("#date").val()
 		var description = $("#description").val()
 
-		slug = encodeURI(title.split(' ').join('-'))
-
 		doc = {
 			"title": title,
-			"slug": slug,
+			"slug": eventSlug.get(),
 			"location": location,
 			"date": date,
 			"description": description
@@ -40,17 +53,22 @@ Template.newEvent.events({
 		});
 	},
 	'keyup [data-action="event-title"]': function(event) {
-		var theTitle = event.target.value
-		title.set(theTitle);
+		var tmpSlug = event.target.value
+    var cleanSlug = makeSlug(tmpSlug).toLowerCase()
+    eventSlug.set(cleanSlug)
 	},
 })
 
 Template.newEvent.helpers({
 	eventSlug: function () {
-		slug = title.get()
-		return encodeURI(slug.split(' ').join('-'))
+    return eventSlug.get()
 	},
 	eventTitle: function () {
 		return title.get()
 	}
+});
+
+Template.newEvent.onRendered(function () {
+  var picker = new Pikaday({ field: document.getElementById('date') });
+  picker.gotoDate(new Date())
 });
